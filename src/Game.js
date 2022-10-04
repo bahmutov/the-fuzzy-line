@@ -11,7 +11,7 @@ import { useWinContext } from './context/WinContext'
 /**
  * Game is the main React component.
  */
-export const Game = () => {
+export const Game = (props) => {
   /**
    * All the variables for holding state:
    * gameArray: Holds the current state of the game.
@@ -54,10 +54,16 @@ export const Game = () => {
    * Creates a new game and initializes the state variables.
    */
   function _createNewGame(e) {
-    const [temporaryInitArray, temporarySolvedArray] =
-      window.starting && window.solved
-        ? [window.starting, window.solved]
-        : getUniqueSudoku(difficulty, e)
+    let temporaryInitArray, temporarySolvedArray
+    temporaryInitArray = props.initArray
+    temporarySolvedArray = props.solvedArray
+
+    if (!temporaryInitArray) {
+      ;[temporaryInitArray, temporarySolvedArray] =
+        window.starting && window.solved
+          ? [window.starting, window.solved]
+          : getUniqueSudoku(difficulty, e)
+    }
 
     setInitArray(temporaryInitArray)
     setGameArray(temporaryInitArray)
@@ -75,7 +81,8 @@ export const Game = () => {
   function _isSolved(index, value) {
     if (
       gameArray.every((cell, cellIndex) => {
-        if (cellIndex === index) return value === solvedArray[cellIndex]
+        if (cellIndex === index)
+          return value === solvedArray[cellIndex]
         else return cell === solvedArray[cellIndex]
       })
     ) {
@@ -182,7 +189,10 @@ export const Game = () => {
    * try to delete the cell.
    */
   function onClickErase() {
-    if (cellSelected !== -1 && gameArray[cellSelected] !== '0') {
+    if (
+      cellSelected !== -1 &&
+      gameArray[cellSelected] !== '0'
+    ) {
       _fillCell(cellSelected, '0')
     }
   }
@@ -232,17 +242,27 @@ export const Game = () => {
   }, [])
 
   const gameLasted = Math.ceil(
-    moment.duration(moment().diff(timeGameStarted)).asSeconds(),
+    moment
+      .duration(moment().diff(timeGameStarted))
+      .asSeconds(),
   )
 
   return (
     <>
-      <div className={overlay ? 'container blur' : 'container'}>
+      <div
+        className={overlay ? 'container blur' : 'container'}
+      >
         <Header onClick={onClickNewGame} />
         <div className="innercontainer">
-          <GameSection onClick={(indexOfArray) => onClickCell(indexOfArray)} />
+          <GameSection
+            onClick={(indexOfArray) =>
+              onClickCell(indexOfArray)
+            }
+          />
           <StatusSection
-            onClickNumber={(number) => onClickNumber(number)}
+            onClickNumber={(number) =>
+              onClickNumber(number)
+            }
             onChange={(e) => onChangeDifficulty(e)}
             onClickUndo={onClickUndo}
             onClickErase={onClickErase}

@@ -10,7 +10,12 @@ describe('Overlay', () => {
   })
 
   it('is visible and clickable', () => {
-    cy.mount(<Overlay overlay={true} onClickOverlay={cy.stub().as('click')} />)
+    cy.mount(
+      <Overlay
+        overlay={true}
+        onClickOverlay={cy.stub().as('click')}
+      />,
+    )
     cy.get('.overlay').should('be.visible').click()
     cy.get('@click').should('have.been.called')
   })
@@ -20,9 +25,10 @@ describe('Overlay', () => {
       delay: 1000,
       statusCode: 404,
       body: [],
-    })
+    }).as('times')
     cy.mount(<Overlay overlay={true} time={90} />)
     cy.contains('.overlay__loading', 'Loading').should('be.visible')
+    cy.wait('@times')
     cy.get('.overlay__loading').should('not.exist')
   })
 
