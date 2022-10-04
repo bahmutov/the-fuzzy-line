@@ -20,7 +20,6 @@ describe('Difficulty', () => {
     cy.get('@change')
       .should('have.been.calledOnce')
       .its('firstCall.args.0.target.value')
-      .then(cy.log)
       .should('equal', 'Medium')
   })
 })
