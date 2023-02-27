@@ -21,7 +21,8 @@
     "comp": "cypress open --component --browser electron",
     "dev": "start-server-and-test 3000 cy:open",
     "e2e": "start-server-and-test 3000 cy:e2e",
-    "badges": "npx -p dependency-version-badge update-badge cypress"
+    "badges": "npx -p dependency-version-badge update-badge cypress",
+    "test-names:e2e": "find-cypress-specs --names"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -40,6 +41,7 @@
   },
   "devDependencies": {
     "cypress": "12.7.0",
+    "find-cypress-specs": "^1.26.0",
     "prettier": "2.7.1",
     "start-server-and-test": "2.0.0"
   }

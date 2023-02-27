@@ -4,6 +4,43 @@
 
 Original Sudoku game copied from [https://github.com/raravi/sudoku](https://github.com/raravi/sudoku) and you can play it at [https://sudoku-raravi.vercel.app/](https://sudoku-raravi.vercel.app/).
 
+## Test names
+
+To see all E2E test names using [find-cypress-specs](https://github.com/bahmutov/find-cypress-specs) use the script
+
+```
+$ npm run test-names:e2e
+
+> the-fuzzy-line@1.0.0 test-names:e2e
+> find-cypress-specs --names
+
+cypress/e2e/format-time.cy.js (1 test)
+└─ formats the time
+
+cypress/e2e/hint.cy.js (1 test)
+└─ fills each empty cell using Hint
+
+cypress/e2e/loads.cy.js (1 test)
+└─ empty spec
+  └─ passes
+
+cypress/e2e/modes.cy.js (1 test)
+└─ changes the number of filled cells
+
+cypress/e2e/play.cy.js (1 test)
+└─ Sudoku
+  └─ plays the same game
+
+cypress/e2e/timer-clock.cy.js (2 tests, 2 pending)
+├⊙ Timer shows 15 minutes
+└⊙ Timer shows minutes and seconds since the game started
+
+cypress/e2e/timer.cy.js (1 test)
+└─ Timer shows 10 seconds
+
+found 7 specs (8 tests, 2 pending)
+```
+
 ## Small print
 
 Author: Gleb Bahmutov &lt;gleb.bahmutov@gmail.com&gt; &copy; 2022

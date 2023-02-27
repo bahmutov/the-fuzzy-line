@@ -21,7 +21,8 @@
       "excludePackagePatterns": [
         "cypress",
         "prettier",
-        "start-server-and-test"
+        "start-server-and-test",
+        "find-cypress-specs"
       ],
       "enabled": false
     }
