@@ -4,6 +4,10 @@
 
 Original Sudoku game copied from [https://github.com/raravi/sudoku](https://github.com/raravi/sudoku) and you can play it at [https://sudoku-raravi.vercel.app/](https://sudoku-raravi.vercel.app/).
 
+## Presentations
+
+- 💻 slides [Learn Cypress React component testing by playing Sudoku](https://slides.com/bahmutov/sudoku-confoo)
+
 ## Test names
 
 To see all E2E test names using [find-cypress-specs](https://github.com/bahmutov/find-cypress-specs) use the script
