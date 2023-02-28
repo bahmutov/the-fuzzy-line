@@ -41,6 +41,33 @@ cypress/e2e/timer.cy.js (1 test)
 found 7 specs (8 tests, 2 pending)
 ```
 
+To see component test names run `test-names:component` script
+
+```
+$ npm run test-names:component
+
+> the-fuzzy-line@1.0.0 test-names:component
+> find-cypress-specs --component --names
+
+src/App.cy.js (1 test, 1 pending)
+└⊙ stubs the ES6 import
+
+src/Game.cy.js (1 test)
+└─ plays the game
+
+src/components/Difficulty.cy.js (1 test)
+└─ Difficulty
+  └─ changes the difficulty level
+
+src/components/FormatTime.cy.js (1 test)
+└─ Timer
+  └─ formats the time
+
+...
+
+found 9 specs (14 tests, 2 pending)
+```
+
 ## Small print
 
 Author: Gleb Bahmutov &lt;gleb.bahmutov@gmail.com&gt; &copy; 2022
