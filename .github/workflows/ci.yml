@@ -13,11 +13,13 @@ jobs:
       - name: Cypress component tests
         uses: cypress-io/github-action@v5
         with:
+          build: 'npm run test-names:component'
           component: true
 
       - name: Cypress e2e tests
         uses: cypress-io/github-action@v5
         with:
           install: false
+          build: 'npm run test-names:e2e'
           start: npm start
           wait-on: 'http://localhost:3000'
