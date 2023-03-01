@@ -1,4 +1,4 @@
-# sudoku-app [![CI](https://github.com/bahmutov/the-fuzzy-line/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/bahmutov/the-fuzzy-line/actions/workflows/ci.yml) ![cypress version](https://img.shields.io/badge/cypress-10.9.0-brightgreen)
+# sudoku-app [![CI](https://github.com/bahmutov/the-fuzzy-line/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/bahmutov/the-fuzzy-line/actions/workflows/ci.yml) ![cypress version](https://img.shields.io/badge/cypress-12.7.0-brightgreen)
 
 > Example E2E and component Cypress tests for Sudoku game
 
