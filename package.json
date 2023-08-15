@@ -41,7 +41,7 @@
     ]
   },
   "devDependencies": {
-    "cypress": "12.17.3",
+    "cypress": "12.17.4",
     "find-cypress-specs": "^1.28.0",
     "prettier": "2.8.8",
     "start-server-and-test": "2.0.0"
